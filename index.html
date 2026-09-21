@@ -3,241 +3,61 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>O’Fallon Services LLC — Engines, steel, and the haul</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+<title>O'Fallon Services LLC — Irish-owned shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
 <style>
-:root{
-  --forest:#12281c; --deep:#0b1b13; --kelly:#2f7a3e; --gold:#c4a056;
-  --gold2:#e2c57a; --cream:#f4efe4; --paper:#f6f2e9; --ink:#171e1a;
-  --mute:#5a645d; --line:rgba(196,160,86,.35);
-  --display:"Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --body:"Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
-  --ui:Outfit, "Avenir Next", "Segoe UI", sans-serif;
-}
+:root{--kelly:#3DBA2A;--deep:#04190C;--gold:#C9A227;--gold2:#E6C65A;--paper:#F7F3E8;--ink:#102016}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.1875rem;line-height:1.7}
-a{color:inherit}
-.wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
-.kicker{font-family:var(--ui);font-size:.8125rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.012em;line-height:1.08}
-h1 em,h2 em{font-style:italic}
-.top{background:var(--deep);color:var(--cream);font-family:var(--ui);font-size:.8125rem;font-weight:500;letter-spacing:.06em}
-.top .wrap{display:flex;justify-content:space-between;gap:16px;padding:11px 0}
-.top a{color:var(--gold2);text-decoration:none}
-nav{position:sticky;top:0;z-index:40;background:rgba(11,27,19,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}
-.logo{font-family:var(--display);font-size:1.625rem;color:var(--gold2);text-decoration:none;line-height:1.05}
-.logo small{display:block;font-family:var(--ui);font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#d5ddd6;margin-top:.4rem}
-nav ul{display:flex;gap:2px;list-style:none}
-nav a{font-family:var(--ui);font-size:.8125rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#e4ece5;text-decoration:none;padding:10px 13px}
-nav a:hover{color:var(--gold2)}
-.hero{position:relative;min-height:92vh;color:var(--cream);overflow:hidden;display:flex;align-items:flex-end}
-.hero-slides{position:absolute;inset:0}
-.hero-slides .slide{position:absolute;inset:0;opacity:0;animation:fade 18s infinite;background-size:cover}
-.hero-slides .slide:nth-child(1){animation-delay:0s}
-.hero-slides .slide:nth-child(2){animation-delay:6s}
-.hero-slides .slide:nth-child(3){animation-delay:12s}
-@keyframes fade{0%{opacity:0}8%{opacity:1}30%{opacity:1}38%{opacity:0}100%{opacity:0}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,27,19,.12) 18%,rgba(11,27,19,.82) 100%)}
-.hero .copy{position:relative;z-index:2;padding:0 0 80px}
-.hero h1{font-size:clamp(2.65rem,5.6vw + .4rem,4.65rem);max-width:13.5ch;margin:16px 0 22px;color:var(--cream)}
-.hero h1 em{color:var(--gold2)}
-.hero .lead{max-width:38ch;color:#e4ebe4}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{font-family:var(--ui);font-size:.875rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer}
-.btn-gold{background:var(--gold);color:#1a1408}
-.btn-line{background:transparent;color:var(--cream);border:1px solid var(--gold)}
-.btn-forest{background:var(--forest);color:var(--cream)}
-.chapter{display:grid;grid-template-columns:1.02fr .98fr;min-height:88vh}
-.chapter.reverse{grid-template-columns:.98fr 1.02fr}
-.chapter .photo{min-height:56vh;position:relative;background-size:cover;background-position:center}
-.chapter .text{padding:80px 64px 80px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--paper)}
-.chapter.reverse .text{order:-1;padding:80px 56px 80px 64px}
-.chapter h2{font-size:clamp(2.05rem,2.6vw + 1rem,2.85rem);max-width:16ch;margin:12px 0 20px}
-.chapter .body{color:#2a322d;max-width:42ch}
-.list{margin:24px 0 0;padding:0;list-style:none;max-width:42ch}
-.list li{padding:8px 0 8px 20px;position:relative}
-.list li:before{content:"";width:7px;height:7px;background:var(--gold);position:absolute;left:0;top:.72em}
-.form{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;max-width:34rem}
-.form .full{grid-column:1/-1}
-.form label{font-family:var(--ui);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:7px}
-.form input,.form textarea{width:100%;border:1px solid #d4cdbc;background:#fff;padding:13px 14px;font-family:var(--ui);font-size:1rem;border-radius:2px}
-.form textarea{min-height:96px}
-.form .btn{width:100%}
-.ok{display:none;grid-column:1/-1;background:#e8f1e6;padding:14px 16px}
-.strip{background:var(--deep);color:var(--cream);padding:36px 0;border-block:1px solid var(--gold)}
-.strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.strip h2{font-size:clamp(1.7rem,1.6vw + .9rem,2.25rem);color:var(--cream);max-width:18ch}
-.about{padding:96px 0 64px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.about-photo{min-height:520px;background-size:cover;background-position:center}
-.about h2{font-size:clamp(1.7rem,1.6vw + .9rem,2.25rem);margin:12px 0 20px;max-width:14ch}
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;padding:0 0 96px}
-.facts article{border-top:1px solid var(--gold);padding-top:18px}
-footer{background:var(--deep);color:#c5cec8;padding:44px 0 30px;font-family:var(--ui)}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a{color:var(--gold2);text-decoration:none}
-.s1{background-image:linear-gradient(180deg,rgba(11,27,19,.05),rgba(11,27,19,.35)),radial-gradient(circle at 20% 80%,#c4a056 0,transparent 28%),linear-gradient(135deg,#1a3a28,#0b1b13 55%,#3a2a12)}
-.s2{background-image:linear-gradient(160deg,#244a32,#102418 50%,#6b5a2a)}
-.s3{background-image:linear-gradient(115deg,#1c2a20 0%,#0b1b13 40%,#4a3a18 100%)}
-.s4{background-image:radial-gradient(circle at 30% 40%,rgba(226,197,122,.35),transparent 32%),linear-gradient(160deg,#3a220e,#0b1b13 55%,#1e3a28)}
-.s5{background-image:linear-gradient(200deg,#2a2418,#12281c 60%,#c4a05633)}
-@media(max-width:900px){
-  .wrap{width:min(1160px,calc(100% - 32px))}
-  .chapter,.chapter.reverse,.about,.facts{grid-template-columns:1fr}
-  .chapter.reverse .text{order:0}
-  .chapter .text,.chapter.reverse .text{padding:40px 8px 48px}
-  nav ul{display:none}
-  .form{grid-template-columns:1fr}
-  .hero{min-height:88vh}
-  .btn{width:100%}
-}
+body{font-family:Outfit,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,calc(100% - 36px));margin:0 auto}
+.top{background:var(--kelly);color:#06210C;font-weight:700;padding:10px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:12px}
+nav{background:var(--deep);border-bottom:3px solid var(--gold)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:78px}
+.brand{color:var(--gold2);font-family:"Cormorant Garamond",Georgia,serif;font-size:28px}
+.brand span{display:block;color:#B7E3B3;font-family:Outfit,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.hero{min-height:86vh;display:flex;align-items:flex-end;color:#fff;padding:0 0 64px;
+background:linear-gradient(180deg,rgba(4,25,12,.2),rgba(4,25,12,.88)),radial-gradient(circle at 80% 10%,rgba(61,186,42,.35),transparent 40%),#083318}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.6rem,7vw,5rem);line-height:.95;max-width:13ch;margin:12px 0 16px}
+h1 em{color:var(--gold2);font-style:italic}
+.kicker{color:var(--gold2);letter-spacing:.2em;text-transform:uppercase;font-size:13px;font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 24px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.gold{background:linear-gradient(180deg,#E6C65A,#C9A227);color:#1A1404}
+.kelly{background:linear-gradient(180deg,#62D84A,#3DBA2A);color:#06210C}
+.irish{background:var(--kelly);color:#06210C;padding:16px 0;font-weight:700}
+section{padding:56px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border-top:6px solid var(--kelly);padding:22px;box-shadow:0 8px 24px rgba(4,25,12,.08)}
+.strip{background:var(--kelly);color:#06210C;padding:32px 0;border-block:4px solid var(--gold)}
+footer{background:var(--deep);color:#C5DCC4;padding:32px 0;border-top:4px solid var(--gold)}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro & surrounding Nebraska</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
-<nav><div class="wrap">
-  <a class="logo" href="#top">O’Fallon Services<small>LLC · Mike O’Fallon</small></a>
-  <ul>
-    <li><a href="#engines">Engines</a></li>
-    <li><a href="#welding">Welding</a></li>
-    <li><a href="#cdl">CDL</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</div></nav>
-<section class="hero" id="top">
-  <div class="hero-slides">
-    <div class="slide s1"></div>
-    <div class="slide s2"></div>
-    <div class="slide s3"></div>
-  </div>
-  <div class="wrap copy">
-    <p class="kicker">Small engines · Light welding · Class A CDL</p>
-    <h1>The machine should run. The steel should hold. The load should <em>move</em>.</h1>
-    <p class="lead">O’Fallon Services is Mike O’Fallon’s one-call shop. Service the engine. Mend the frame. Haul what will not fit in a pickup.</p>
-    <div class="btns">
-      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
-      <a class="btn btn-line" href="#contact">Request the work</a>
-    </div>
-  </div>
-</section>
-<article class="chapter" id="engines">
-  <div class="photo s2"></div>
-  <div class="text">
-    <p class="kicker">Service 01</p>
-    <h2>Small engine service & repair</h2>
-    <div class="body">
-      <p>Mowers, snowblowers, generators, tillers, pumps, and the other engines that sit through a Nebraska season and then refuse the first pull.</p>
-      <p>The work is ordinary on purpose: fuel that went stale, a carburetor that will not meter, no spark, no compression, a blade that will not hold, a winterize that was skipped. You get the machine back starting, or you get a plain answer that it will not.</p>
-    </div>
-    <ul class="list">
-      <li>Will not start, no power, no spark</li>
-      <li>Carburetor, fuel, blade, winterize</li>
-      <li>Drop-off or on-site by arrangement</li>
-    </ul>
-    <form class="form quote" data-service="Small engine service & repair">
-      <div><label>Name</label><input name="name" required></div>
-      <div><label>Phone</label><input name="phone" required></div>
-      <div class="full"><label>Machine and what it is doing</label><textarea name="message" required placeholder="Brand, model if you have it, what changed."></textarea></div>
-      <div class="full"><button class="btn btn-gold" type="submit">Send this engine job</button></div>
-      <div class="ok">Opening a text and email to the shop with these details.</div>
-    </form>
-  </div>
-</article>
-<article class="chapter reverse" id="welding">
-  <div class="photo s4"></div>
-  <div class="text">
-    <p class="kicker">Service 02</p>
-    <h2>Light welding repair & fabrication</h2>
-    <div class="body">
-      <p>Cracked brackets. Torn implement frames. Gates that sag. Trailer tabs. The steel that failed in the field and still has a season left in it.</p>
-      <p>This is light work, named that way on purpose. Cut, fit, weld, grind. Plant packages and stamped building frames are someone else’s ticket — you will hear that before an arc is struck.</p>
-    </div>
-    <ul class="list">
-      <li>Repair of cracked or broken steel</li>
-      <li>Small fabrication: tabs, sleeves, gates, mounts</li>
-      <li>Trailers, implements, yard and shop fixtures</li>
-    </ul>
-    <form class="form quote" data-service="Light welding repair & fabrication">
-      <div><label>Name</label><input name="name" required></div>
-      <div><label>Phone</label><input name="phone" required></div>
-      <div class="full"><label>What broke, and where it sits</label><textarea name="message" required></textarea></div>
-      <div class="full"><button class="btn btn-gold" type="submit">Send this weld job</button></div>
-      <div class="ok">Opening a text and email to the shop with these details.</div>
-    </form>
-  </div>
-</article>
-<article class="chapter" id="cdl">
-  <div class="photo s3"></div>
-  <div class="text">
-    <p class="kicker">Service 03</p>
-    <h2>Class A CDL</h2>
-    <div class="body">
-      <p>Some jobs do not fit in a pickup. The mower that has to come in. The implement that has to change farms. The trailer that has to roll with a licensed Class A operator attached.</p>
-      <p>Haul-in and haul-out sit next to the engine and weld tickets on purpose. One call can bring the machine, repair it, and take it home.</p>
-    </div>
-    <ul class="list">
-      <li>Haul-in / haul-out for shop work</li>
-      <li>Equipment and implement moves</li>
-      <li>Combined tickets with service or weld</li>
-    </ul>
-    <form class="form quote" data-service="Class A CDL / haul">
-      <div><label>Name</label><input name="name" required></div>
-      <div><label>Phone</label><input name="phone" required></div>
-      <div class="full"><label>What has to move, from where, to where</label><textarea name="message" required></textarea></div>
-      <div class="full"><button class="btn btn-gold" type="submit">Send this haul</button></div>
-      <div class="ok">Opening a text and email to the shop with these details.</div>
-    </form>
-  </div>
-</article>
-<section class="strip" id="contact">
-  <div class="wrap">
-    <h2>The number is the shop.</h2>
-    <div class="btns">
-      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
-      <a class="btn btn-line" href="sms:4026768241">Text Mike</a>
-    </div>
-  </div>
-</section>
-<section class="wrap about" id="about">
-  <div class="about-photo s5"></div>
-  <div>
-    <p class="kicker">The shop</p>
-    <h2>Mike O’Fallon. Direct line.</h2>
-    <p>You do not get a dispatcher chain. You get Mike. Call or text with what broke, where it sits, and when you need it back. If the job is ours, it gets a time. If it is not, you get that answer instead of a maybe.</p>
-    <p>Hours are Monday through Saturday by appointment. Sunday is for breakdown texts only. The work area is the Omaha metro and surrounding Nebraska. A street address is given when the job is booked — not printed for the public.</p>
-    <p style="margin-top:18px"><a class="btn btn-forest" href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></p>
-  </div>
-</section>
-<section class="wrap facts">
-  <article><h3>Hours</h3><p>Monday–Saturday by appointment. Sunday: breakdown texts only.</p></article>
-  <article><h3>Area</h3><p>Omaha metro and surrounding Nebraska. On-site or drop-off by arrangement.</p></article>
-  <article><h3>Line</h3><p>402-676-8241 · call or text. Inbox above if you would rather write.</p></article>
-</section>
-<footer><div class="wrap">
-  <div>O’Fallon Services LLC · Mike O’Fallon</div>
-  <div><a href="tel:4026768241">402-676-8241</a></div>
-</div></footer>
-<script>
-(function(){
-  const phone="4026768241", email="ofallon.services.llc@gmail.com";
-  document.querySelectorAll("form.quote").forEach(function(form){
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const svc=form.getAttribute("data-service");
-      const name=(form.querySelector("[name=name]")||{}).value||"";
-      const ph=(form.querySelector("[name=phone]")||{}).value||"";
-      const msg=(form.querySelector("[name=message]")||{}).value||"";
-      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
-      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
-      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
-      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
-    });
-  });
-})();
-</script>
-</body>
-</html>
+<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Irish-owned</span><a href="tel:4026768241">402-676-8241</a></div></div>
+<nav><div class="wrap"><a class="brand" href="#top">O'Fallon Services<span>LLC · Mike O'Fallon</span></a><a class="btn gold" href="tel:4026768241">Call</a></div></nav>
+<header class="hero"><div class="wrap">
+<p class="kicker">Irish-owned · Small engines · Light welding · Class A CDL</p>
+<h1>The machine should run. The steel should hold. The load should <em>move</em>.</h1>
+<p>Kelly green on the door. Antique gold on the sign. You get Mike.</p>
+<div class="btns">
+<a class="btn gold" href="tel:4026768241">Call 402-676-8241</a>
+<a class="btn kelly" href="#work">See the work</a>
+</div>
+</div></header>
+<div class="irish"><div class="wrap">Ó Fallamhain — O'Fallon. Irish name. Nebraska shop. Direct line. No dispatcher.</div></div>
+<section id="work"><div class="wrap">
+<div class="grid">
+<article class="card"><h2>Small engines</h2><p>Mowers, snowblowers, generators, tillers, pumps. Won't start, no spark, carb, blade, winterize.</p></article>
+<article class="card"><h2>Light welding</h2><p>Cracked brackets, implement frames, gates, trailer tabs. Honest light-duty scope.</p></article>
+<article class="card"><h2>Class A CDL</h2><p>Haul-in / haul-out and equipment moves when it will not fit in a pickup.</p></article>
+</div>
+</div></section>
+<div class="strip"><div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center">
+<h2>The number is the shop.</h2>
+<a class="btn gold" href="tel:4026768241">402-676-8241</a>
+</div></div>
+<footer><div class="wrap">O'Fallon Services LLC · Mike O'Fallon · Irish-owned · ofallon.services.llc@gmail.com</div></footer>
+</body></html>
