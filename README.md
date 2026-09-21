@@ -1,5 +1,5 @@
-O'Fallon Services LLC draft site for owner review.
+# O'Fallon Services LLC
 
-https://husker57.github.io/
+Public draft site: https://husker57.github.io/
 
 Pages: Home, Engines, Welding, Class A, About, Contact.
