@@ -16,16 +16,20 @@
   <button class="burger" type="button" id="burger">Menu</button>
   <ul id="navlist">
     <li><a class="n on" href="index.html">Home</a></li>
-    <li><a class="n " href="engines.html">Engines</a></li>
-    <li><a class="n " href="welding.html">Welding</a></li>
-    <li><a class="n " href="cdl.html">Class A</a></li>
-    <li><a class="n " href="about.html">About</a></li>
-    <li><a class="n " href="contact.html">Contact</a></li>
+    <li><a class="n" href="engines.html">Engines</a></li>
+    <li><a class="n" href="welding.html">Welding</a></li>
+    <li><a class="n" href="cdl.html">Class A</a></li>
+    <li><a class="n" href="about.html">About</a></li>
+    <li><a class="n" href="contact.html">Contact</a></li>
   </ul>
 </div></nav>
 <section class="hero">
-  <div class="stage"><img src="photos/hero.svg" alt="O’Fallon shop floor and Kelly green service truck" /></div>
-  <div class="sound"><button id="soundBtn" type="button">Sound on</button></div>
+  <div class="stage">
+    <img src="photos/weld.svg" alt="Light welding on steel" />
+    <img src="photos/cdl.svg" alt="Kelly green Class A tractor and flatbed" />
+    <img src="photos/mark.svg" alt="O’Fallon shamrock mark" />
+  </div>
+  <div class="sound"><button id="soundBtn" type="button">Tap for sound</button></div>
   <div class="copy wrap">
     <p class="kicker">Small engines · Light welding · Class A CDL</p>
     <h1>The machine should run. The steel should hold. The load should <em>move</em>.</h1>
@@ -42,7 +46,7 @@
   <h2>Three trades. One number.</h2>
   <div class="grid3" style="margin-top:28px">
     <article class="card">
-      <img src="photos/engines.svg" alt="Mowers open for service" />
+      <img src="photos/weld.svg" alt="Shop work" />
       <div class="pad">
         <h3>Small engines</h3>
         <p>Mowers, snowblowers, generators, tillers, pumps. Won’t start, no spark, carb, blade, winterize.</p>
@@ -67,14 +71,7 @@
     </article>
   </div>
 </div></section>
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="facts">
-    <article><h3>Direct line</h3><p>You call Mike. No dispatcher chain.</p></article>
-    <article><h3>By appointment</h3><p>Monday–Saturday. Sunday for breakdown texts only.</p></article>
-    <article><h3>Omaha metro</h3><p>Shop work and arranged on-site in surrounding Nebraska.</p></article>
-  </div>
-</div></section>
-<div class="strip" id="call"><div class="wrap">
+<div class="strip"><div class="wrap">
   <h2>The number is the shop.</h2>
   <div class="btns">
     <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
@@ -83,11 +80,8 @@
 </div></div>
 <footer><div class="wrap">
   <div>O’Fallon Services LLC · Mike O’Fallon</div>
-  <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
+  <div><a href="tel:4026768241">402-676-8241</a></div>
 </div></footer>
-<div class="float">
-  <a class="btn btn-gold" href="tel:4026768241">Call now</a>
-</div>
 <script>
 (function(){
   const burger=document.getElementById("burger");
@@ -99,10 +93,9 @@
     b.addEventListener("click", function(){
       on=!on;
       if(on){ if(window.startOFallonSound) window.startOFallonSound(); b.textContent="Sound off"; }
-      else { if(window.stopOFallonSound) window.stopOFallonSound(); b.textContent="Sound on"; }
+      else { if(window.stopOFallonSound) window.stopOFallonSound(); b.textContent="Tap for sound"; }
     });
   }
 })();
 </script>
-</body>
-</html>
+</body></html>
