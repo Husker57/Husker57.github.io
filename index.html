@@ -25,7 +25,6 @@
 </div></nav>
 <section class="hero">
   <div class="stage"><img src="photos/hero.svg" alt="O’Fallon shop floor and Kelly green service truck" /></div>
-  <audio id="bed" loop preload="auto"></audio>
   <div class="sound"><button id="soundBtn" type="button">Sound on</button></div>
   <div class="copy wrap">
     <p class="kicker">Small engines · Light welding · Class A CDL</p>
@@ -94,29 +93,13 @@
   const burger=document.getElementById("burger");
   const list=document.getElementById("navlist");
   if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
-  const phone="4026768241", email="ofallon.services.llc@gmail.com";
-  document.querySelectorAll("form.quote").forEach(function(form){
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const svc=form.getAttribute("data-service");
-      const name=(form.querySelector("[name=name]")||{}).value||"";
-      const ph=(form.querySelector("[name=phone]")||{}).value||"";
-      const msg=(form.querySelector("[name=message]")||{}).value||"";
-      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
-      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
-      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
-      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
-    });
-  });
-  const a=document.getElementById("bed");
   const b=document.getElementById("soundBtn");
-  if(a && window.OFALLON_BED) a.src=window.OFALLON_BED;
-  if(b&&a){
+  if(b){
     let on=false;
     b.addEventListener("click", function(){
       on=!on;
-      if(on){ a.currentTime=0; a.play().catch(function(){}); b.textContent="Sound off"; }
-      else { a.pause(); b.textContent="Sound on"; }
+      if(on){ if(window.startOFallonSound) window.startOFallonSound(); b.textContent="Sound off"; }
+      else { if(window.stopOFallonSound) window.stopOFallonSound(); b.textContent="Sound on"; }
     });
   }
 })();
