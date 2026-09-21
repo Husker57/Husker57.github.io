@@ -3,61 +3,123 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>O'Fallon Services LLC — Irish-owned shop</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
-<style>
-:root{--kelly:#3DBA2A;--deep:#04190C;--gold:#C9A227;--gold2:#E6C65A;--paper:#F7F3E8;--ink:#102016}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Outfit,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1100px,calc(100% - 36px));margin:0 auto}
-.top{background:var(--kelly);color:#06210C;font-weight:700;padding:10px 0}
-.top .wrap{display:flex;justify-content:space-between;gap:12px}
-nav{background:var(--deep);border-bottom:3px solid var(--gold)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:78px}
-.brand{color:var(--gold2);font-family:"Cormorant Garamond",Georgia,serif;font-size:28px}
-.brand span{display:block;color:#B7E3B3;font-family:Outfit,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.hero{min-height:86vh;display:flex;align-items:flex-end;color:#fff;padding:0 0 64px;
-background:linear-gradient(180deg,rgba(4,25,12,.2),rgba(4,25,12,.88)),radial-gradient(circle at 80% 10%,rgba(61,186,42,.35),transparent 40%),#083318}
-h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.6rem,7vw,5rem);line-height:.95;max-width:13ch;margin:12px 0 16px}
-h1 em{color:var(--gold2);font-style:italic}
-.kicker{color:var(--gold2);letter-spacing:.2em;text-transform:uppercase;font-size:13px;font-weight:700}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 24px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.gold{background:linear-gradient(180deg,#E6C65A,#C9A227);color:#1A1404}
-.kelly{background:linear-gradient(180deg,#62D84A,#3DBA2A);color:#06210C}
-.irish{background:var(--kelly);color:#06210C;padding:16px 0;font-weight:700}
-section{padding:56px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:#fff;border-top:6px solid var(--kelly);padding:22px;box-shadow:0 8px 24px rgba(4,25,12,.08)}
-.strip{background:var(--kelly);color:#06210C;padding:32px 0;border-block:4px solid var(--gold)}
-footer{background:var(--deep);color:#C5DCC4;padding:32px 0;border-top:4px solid var(--gold)}
-@media(max-width:800px){.grid{grid-template-columns:1fr}}
-</style>
+<title>O’Fallon Services LLC — Engines, welding, Class A CDL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+<script src="bed.js"></script>
 </head>
 <body>
-<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Irish-owned</span><a href="tel:4026768241">402-676-8241</a></div></div>
-<nav><div class="wrap"><a class="brand" href="#top">O'Fallon Services<span>LLC · Mike O'Fallon</span></a><a class="btn gold" href="tel:4026768241">Call</a></div></nav>
-<header class="hero"><div class="wrap">
-<p class="kicker">Irish-owned · Small engines · Light welding · Class A CDL</p>
-<h1>The machine should run. The steel should hold. The load should <em>move</em>.</h1>
-<p>Kelly green on the door. Antique gold on the sign. You get Mike.</p>
-<div class="btns">
-<a class="btn gold" href="tel:4026768241">Call 402-676-8241</a>
-<a class="btn kelly" href="#work">See the work</a>
-</div>
-</div></header>
-<div class="irish"><div class="wrap">Ó Fallamhain — O'Fallon. Irish name. Nebraska shop. Direct line. No dispatcher.</div></div>
-<section id="work"><div class="wrap">
-<div class="grid">
-<article class="card"><h2>Small engines</h2><p>Mowers, snowblowers, generators, tillers, pumps. Won't start, no spark, carb, blade, winterize.</p></article>
-<article class="card"><h2>Light welding</h2><p>Cracked brackets, implement frames, gates, trailer tabs. Honest light-duty scope.</p></article>
-<article class="card"><h2>Class A CDL</h2><p>Haul-in / haul-out and equipment moves when it will not fit in a pickup.</p></article>
-</div>
+<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="photos/mark.svg" alt="O’Fallon shamrock mark" /><span><b>O’Fallon Services</b><small>LLC · Mike O’Fallon</small></span></a>
+  <button class="burger" type="button" id="burger">Menu</button>
+  <ul id="navlist">
+    <li><a class="n on" href="index.html">Home</a></li>
+    <li><a class="n " href="engines.html">Engines</a></li>
+    <li><a class="n " href="welding.html">Welding</a></li>
+    <li><a class="n " href="cdl.html">Class A</a></li>
+    <li><a class="n " href="about.html">About</a></li>
+    <li><a class="n " href="contact.html">Contact</a></li>
+  </ul>
+</div></nav>
+<section class="hero">
+  <div class="stage"><img src="photos/hero.svg" alt="O’Fallon shop floor and Kelly green service truck" /></div>
+  <audio id="bed" loop preload="auto"></audio>
+  <div class="sound"><button id="soundBtn" type="button">Sound on</button></div>
+  <div class="copy wrap">
+    <p class="kicker">Small engines · Light welding · Class A CDL</p>
+    <h1>The machine should run. The steel should hold. The load should <em>move</em>.</h1>
+    <p class="lead">O’Fallon Services is Mike O’Fallon’s one-call shop. Service the engine. Mend the frame. Haul what will not fit in a pickup.</p>
+    <div class="btns">
+      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+      <a class="btn btn-kelly" href="engines.html">See the work</a>
+      <a class="btn btn-line" href="contact.html">Request a job</a>
+    </div>
+  </div>
+</section>
+<section class="sec"><div class="wrap">
+  <p class="kicker">What we do</p>
+  <h2>Three trades. One number.</h2>
+  <div class="grid3" style="margin-top:28px">
+    <article class="card">
+      <img src="photos/engines.svg" alt="Mowers open for service" />
+      <div class="pad">
+        <h3>Small engines</h3>
+        <p>Mowers, snowblowers, generators, tillers, pumps. Won’t start, no spark, carb, blade, winterize.</p>
+        <div class="btns"><a class="btn btn-kelly" href="engines.html">Engine page</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="photos/weld.svg" alt="Light welding on steel" />
+      <div class="pad">
+        <h3>Light welding</h3>
+        <p>Cracked brackets, implement frames, gates, trailer tabs. Honest light-duty scope.</p>
+        <div class="btns"><a class="btn btn-kelly" href="welding.html">Welding page</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <img src="photos/cdl.svg" alt="Class A tractor and flatbed" />
+      <div class="pad">
+        <h3>Class A CDL</h3>
+        <p>Haul-in / haul-out and equipment moves when it will not fit in a pickup.</p>
+        <div class="btns"><a class="btn btn-kelly" href="cdl.html">CDL page</a></div>
+      </div>
+    </article>
+  </div>
 </div></section>
-<div class="strip"><div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center">
-<h2>The number is the shop.</h2>
-<a class="btn gold" href="tel:4026768241">402-676-8241</a>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="facts">
+    <article><h3>Direct line</h3><p>You call Mike. No dispatcher chain.</p></article>
+    <article><h3>By appointment</h3><p>Monday–Saturday. Sunday for breakdown texts only.</p></article>
+    <article><h3>Omaha metro</h3><p>Shop work and arranged on-site in surrounding Nebraska.</p></article>
+  </div>
+</div></section>
+<div class="strip" id="call"><div class="wrap">
+  <h2>The number is the shop.</h2>
+  <div class="btns">
+    <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+    <a class="btn btn-line" href="sms:4026768241" style="color:#06210C;border-color:#06210C">Text Mike</a>
+  </div>
 </div></div>
-<footer><div class="wrap">O'Fallon Services LLC · Mike O'Fallon · Irish-owned · ofallon.services.llc@gmail.com</div></footer>
-</body></html>
+<footer><div class="wrap">
+  <div>O’Fallon Services LLC · Mike O’Fallon</div>
+  <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
+</div></footer>
+<div class="float">
+  <a class="btn btn-gold" href="tel:4026768241">Call now</a>
+</div>
+<script>
+(function(){
+  const burger=document.getElementById("burger");
+  const list=document.getElementById("navlist");
+  if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
+  const phone="4026768241", email="ofallon.services.llc@gmail.com";
+  document.querySelectorAll("form.quote").forEach(function(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const svc=form.getAttribute("data-service");
+      const name=(form.querySelector("[name=name]")||{}).value||"";
+      const ph=(form.querySelector("[name=phone]")||{}).value||"";
+      const msg=(form.querySelector("[name=message]")||{}).value||"";
+      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
+      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
+      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
+      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
+    });
+  });
+  const a=document.getElementById("bed");
+  const b=document.getElementById("soundBtn");
+  if(a && window.OFALLON_BED) a.src=window.OFALLON_BED;
+  if(b&&a){
+    let on=false;
+    b.addEventListener("click", function(){
+      on=!on;
+      if(on){ a.currentTime=0; a.play().catch(function(){}); b.textContent="Sound off"; }
+      else { a.pause(); b.textContent="Sound on"; }
+    });
+  }
+})();
+</script>
+</body>
+</html>
