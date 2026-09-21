@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="site.css" />
 <script src="bed.js"></script>
-<script src="video.js" defer></script>
+<script src="video.js"></script>
 </head>
 <body>
 <div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
@@ -24,16 +24,15 @@
     <li><a class="n " href="contact.html">Contact</a></li>
   </ul>
 </div></nav>
-
 <section class="hero" id="hero">
   <div class="stage">
     <div class="slides">
-      <img class="slide on" src="photos/hero.svg" alt="O’Fallon shop floor" />
-      <img class="slide" src="photos/engines.svg" alt="Mowers open for service" />
-      <img class="slide" src="photos/weld.svg" alt="Light welding repair" />
+      <img class="slide on" src="photos/weld.svg" alt="Light welding on steel" />
       <img class="slide" src="photos/cdl.svg" alt="Class A equipment move" />
+      <img class="slide" src="photos/weld.svg" alt="Shop welding repair" />
+      <img class="slide" src="photos/cdl.svg" alt="Haul-in equipment" />
     </div>
-    <video id="heroVid" muted loop playsinline poster="photos/hero.svg"></video>
+    <video id="heroVid" muted loop playsinline poster="photos/weld.svg"></video>
   </div>
   <div class="sound"><button id="soundBtn" type="button">Tap for sound</button></div>
   <div class="copy wrap">
@@ -52,7 +51,7 @@
   <h2>Three trades. One number.</h2>
   <div class="grid3" style="margin-top:28px">
     <article class="card">
-      <img src="photos/engines.svg" alt="Mowers open for service" />
+      <img src="photos/cdl.svg" alt="Equipment ready for service" />
       <div class="pad">
         <h3>Small engines</h3>
         <p>Mowers, snowblowers, generators, tillers, pumps. Won’t start, no spark, carb, blade, winterize.</p>
@@ -84,7 +83,6 @@
     <article><h3>Omaha metro</h3><p>Shop work and arranged on-site in surrounding Nebraska.</p></article>
   </div>
 </div></section>
-
 <div class="strip" id="call"><div class="wrap">
   <h2>The number is the shop.</h2>
   <div class="btns">
@@ -96,9 +94,7 @@
   <div>O’Fallon Services LLC · Mike O’Fallon</div>
   <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
 </div></footer>
-<div class="float">
-  <a class="btn btn-gold" href="tel:4026768241">Call now</a>
-</div>
+<div class="float"><a class="btn btn-gold" href="tel:4026768241">Call now</a></div>
 <script>
 (function(){
   const burger=document.getElementById("burger");
@@ -107,25 +103,15 @@
   const hero=document.getElementById("hero");
   const vid=document.getElementById("heroVid");
   const b=document.getElementById("soundBtn");
-  if(vid){
-    const src=window.OFALLON_VIDEO || "video/hero.mp4";
-    vid.src=src;
-    vid.muted=true;
-    const play=function(){ vid.play().then(function(){ if(hero) hero.classList.add("has-video"); }).catch(function(){}); };
-    vid.addEventListener("loadeddata", play);
-    vid.addEventListener("error", function(){ if(hero) hero.classList.remove("has-video"); });
-    play();
-  }
+  if(vid && window.startOFallonVideo) window.startOFallonVideo(vid,hero);
   if(b){
     let on=false;
     b.addEventListener("click", function(){
       on=!on;
       if(on){
-        if(vid){ vid.muted=false; vid.volume=1; vid.play().catch(function(){}); }
         if(window.startOFallonSound) window.startOFallonSound();
         b.textContent="Sound off";
       } else {
-        if(vid) vid.muted=true;
         if(window.stopOFallonSound) window.stopOFallonSound();
         b.textContent="Tap for sound";
       }
