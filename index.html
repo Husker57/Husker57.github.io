@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="site.css" />
 <script src="bed.js"></script>
+<script src="video.js"></script>
 </head>
 <body>
 <div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
@@ -23,11 +24,15 @@
     <li><a class="n" href="contact.html">Contact</a></li>
   </ul>
 </div></nav>
-<section class="hero">
+<section class="hero" id="hero">
   <div class="stage">
-    <img src="photos/weld.svg" alt="Light welding on steel" />
-    <img src="photos/cdl.svg" alt="Kelly green Class A tractor and flatbed" />
-    <img src="photos/mark.svg" alt="O’Fallon shamrock mark" />
+    <div class="slides">
+      <div class="slide" style="background-image:url('photos/hero.svg')"></div>
+      <div class="slide" style="background-image:url('photos/engines.svg')"></div>
+      <div class="slide" style="background-image:url('photos/weld.svg')"></div>
+      <div class="slide" style="background-image:url('photos/cdl.svg')"></div>
+    </div>
+    <video id="heroVid" muted loop playsinline poster="photos/hero.svg"></video>
   </div>
   <div class="sound"><button id="soundBtn" type="button">Tap for sound</button></div>
   <div class="copy wrap">
@@ -46,7 +51,7 @@
   <h2>Three trades. One number.</h2>
   <div class="grid3" style="margin-top:28px">
     <article class="card">
-      <img src="photos/weld.svg" alt="Shop work" />
+      <img src="photos/engines.svg" alt="Mowers open for service" />
       <div class="pad">
         <h3>Small engines</h3>
         <p>Mowers, snowblowers, generators, tillers, pumps. Won’t start, no spark, carb, blade, winterize.</p>
@@ -71,7 +76,14 @@
     </article>
   </div>
 </div></section>
-<div class="strip"><div class="wrap">
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="facts">
+    <article><h3>Direct line</h3><p>You call Mike. No dispatcher chain.</p></article>
+    <article><h3>By appointment</h3><p>Monday–Saturday. Sunday for breakdown texts only.</p></article>
+    <article><h3>Omaha metro</h3><p>Shop work and arranged on-site in surrounding Nebraska.</p></article>
+  </div>
+</div></section>
+<div class="strip" id="call"><div class="wrap">
   <h2>The number is the shop.</h2>
   <div class="btns">
     <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
@@ -80,22 +92,44 @@
 </div></div>
 <footer><div class="wrap">
   <div>O’Fallon Services LLC · Mike O’Fallon</div>
-  <div><a href="tel:4026768241">402-676-8241</a></div>
+  <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
 </div></footer>
+<div class="float">
+  <a class="btn btn-gold" href="tel:4026768241">Call now</a>
+</div>
 <script>
 (function(){
   const burger=document.getElementById("burger");
   const list=document.getElementById("navlist");
   if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
+  const hero=document.getElementById("hero");
+  const vid=document.getElementById("heroVid");
   const b=document.getElementById("soundBtn");
+  if(vid){
+    const src=window.OFALLON_VIDEO || "video/hero.mp4";
+    vid.src=src;
+    vid.muted=true;
+    const play=function(){ vid.play().then(function(){ if(hero) hero.classList.add("has-video"); }).catch(function(){}); };
+    vid.addEventListener("loadeddata", play);
+    vid.addEventListener("error", function(){ if(hero) hero.classList.remove("has-video"); });
+    play();
+  }
   if(b){
     let on=false;
     b.addEventListener("click", function(){
       on=!on;
-      if(on){ if(window.startOFallonSound) window.startOFallonSound(); b.textContent="Sound off"; }
-      else { if(window.stopOFallonSound) window.stopOFallonSound(); b.textContent="Tap for sound"; }
+      if(on){
+        if(vid){ vid.muted=false; vid.volume=1; vid.play().catch(function(){}); }
+        if(window.startOFallonSound && (!vid || vid.paused || vid.error)) window.startOFallonSound();
+        b.textContent="Sound off";
+      } else {
+        if(vid) vid.muted=true;
+        if(window.stopOFallonSound) window.stopOFallonSound();
+        b.textContent="Tap for sound";
+      }
     });
   }
 })();
 </script>
-</body></html>
+</body>
+</html>
