@@ -3,54 +3,87 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Small engine service — O'Fallon Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
-<style>
-:root{--kelly:#3DBA2A;--deep:#04190C;--gold:#C9A227;--gold2:#E6C65A;--paper:#F6F1E4;--ink:#101C14}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Outfit,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1100px,calc(100% - 36px));margin:0 auto}
-.top{background:var(--kelly);color:#06210C;font-weight:700;padding:10px 0}
-nav{background:var(--deep);border-bottom:3px solid var(--gold)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:78px;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--gold2)}
-.brand img{width:48px;height:48px;border-radius:50%;border:2px solid var(--gold)}
-nav a.n{color:#E7F6E4;padding:8px 10px;letter-spacing:.1em;text-transform:uppercase;font-size:12px;font-weight:700}
-.hero{min-height:48vh;display:flex;align-items:flex-end;color:#fff;padding:0 0 36px;background:linear-gradient(180deg,rgba(4,25,12,.2),rgba(4,25,12,.86)),url('photos/engines.svg') center/cover}
-h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.2rem,5vw,3.6rem)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:8px 8px 0 0}
-.gold{background:linear-gradient(180deg,#E6C65A,#C9A227);color:#1A1404}
-.kelly{background:linear-gradient(180deg,#62D84A,#3DBA2A);color:#06210C}
-section{padding:48px 0}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-.split img{width:100%;max-height:480px;object-fit:cover;border:6px solid var(--kelly)}
-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:34rem}
-form .full{grid-column:1/-1}
-input,textarea{width:100%;padding:12px;border:1px solid #D4CDB6;font:16px Outfit,sans-serif}
-textarea{min-height:90px}
-.strip{background:var(--kelly);color:#06210C;padding:28px 0;border-block:4px solid var(--gold)}
-footer{background:var(--deep);color:#C5DCC4;padding:28px 0;border-top:4px solid var(--gold)}
-@media(max-width:800px){.split,form{grid-template-columns:1fr} nav .links{display:none}}
-</style></head>
+<title>Small engine service &amp; repair — O’Fallon Services LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+</head>
 <body>
-<div class="top"><div class="wrap">DRAFT · 402-676-8241</div></div>
-<nav><div class="wrap"><a class="brand" href="index.html"><img src="photos/mark.svg" alt="Shamrock mark" /><b>O'Fallon Services</b></a>
-<div class="links"><a class="n" href="index.html">Home</a><a class="n" href="engines.html">Engines</a><a class="n" href="welding.html">Welding</a><a class="n" href="cdl.html">Class A</a><a class="n" href="about.html">About</a><a class="n" href="contact.html">Contact</a></div></div></nav>
-<header class="hero"><div class="wrap"><h1>Small engine service & repair</h1>
-<a class="btn gold" href="tel:4026768241">Call 402-676-8241</a></div></header>
-<section><div class="wrap split">
-<img src="photos/engines.svg" alt="Mowers in the shop" />
-<div>
-<p>Mowers, snowblowers, generators, tillers, pumps. Won't start, no spark, carb, blade, winterize.</p>
-<ul><li>Will not start, no power, no spark</li><li>Carburetor, fuel, blade, winterize</li><li>Drop-off or on-site by arrangement</li></ul>
-<form action="mailto:ofallon.services.llc@gmail.com" method="get">
-<div><label>Name</label><input name="name" required></div>
-<div><label>Phone</label><input name="phone" required></div>
-<div class="full"><label>Machine</label><textarea name="body" required></textarea></div>
-<div class="full"><button class="btn kelly" type="submit">Send this engine job</button></div>
-</form>
-</div></div></section>
-<div class="strip"><div class="wrap"><b>The number is the shop.</b> <a class="btn gold" href="tel:4026768241">402-676-8241</a></div></div>
-<footer><div class="wrap">O'Fallon Services LLC · Mike O'Fallon</div></footer>
-</body></html>
+<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="photos/mark.svg" alt="O’Fallon shamrock mark" /><span><b>O’Fallon Services</b><small>LLC · Mike O’Fallon</small></span></a>
+  <button class="burger" type="button" id="burger">Menu</button>
+  <ul id="navlist">
+    <li><a class="n " href="index.html">Home</a></li>
+    <li><a class="n on" href="engines.html">Engines</a></li>
+    <li><a class="n " href="welding.html">Welding</a></li>
+    <li><a class="n " href="cdl.html">Class A</a></li>
+    <li><a class="n " href="about.html">About</a></li>
+    <li><a class="n " href="contact.html">Contact</a></li>
+  </ul>
+</div></nav>
+<section class="pagehero">
+  <img src="photos/engines.svg" alt="Mowers and rider open on the bench" />
+  <div class="copy wrap">
+    <p class="kicker">Engines</p>
+    <h1>Small engine service &amp; repair</h1>
+    <div class="btns">
+      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+      <a class="btn btn-kelly" href="#request">Request this job</a>
+    </div>
+  </div>
+</section>
+<section class="sec" id="request"><div class="wrap split">
+  <img class="shot" src="photos/carb.svg" alt="Carburetor rebuild on the bench" />
+  <div>
+    <p class="body">Mowers, snowblowers, generators, tillers, pumps — the engines that sit through a Nebraska season and then refuse the first pull.</p>
+    <p class="body">Stale fuel. A carburetor that will not meter. No spark. You get it starting, or you get a plain answer that it will not.</p>
+    <ul class="list">
+      <li>Will not start, no power, no spark</li>
+      <li>Carburetor, fuel, blade, winterize</li>
+      <li>Drop-off or on-site by arrangement</li>
+    </ul>
+    <form class="form quote" data-service="Small engine service & repair">
+      <div><label>Name</label><input name="name" required></div>
+      <div><label>Phone</label><input name="phone" required></div>
+      <div class="full"><label>Machine and what it is doing</label><textarea name="message" required></textarea></div>
+      <div class="full"><button class="btn btn-kelly" type="submit">Send this engine job</button></div>
+      <div class="ok">Opening a text and email to the shop.</div>
+    </form>
+  </div>
+</div></section>
+<div class="strip" id="call"><div class="wrap">
+  <h2>The number is the shop.</h2>
+  <div class="btns">
+    <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+    <a class="btn btn-line" href="sms:4026768241" style="color:#06210C;border-color:#06210C">Text Mike</a>
+  </div>
+</div></div>
+<footer><div class="wrap">
+  <div>O’Fallon Services LLC · Mike O’Fallon</div>
+  <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
+</div></footer>
+<div class="float"><a class="btn btn-gold" href="tel:4026768241">Call now</a></div>
+<script>
+(function(){
+  const burger=document.getElementById("burger");
+  const list=document.getElementById("navlist");
+  if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
+  const phone="4026768241", email="ofallon.services.llc@gmail.com";
+  document.querySelectorAll("form.quote").forEach(function(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const svc=form.getAttribute("data-service");
+      const name=(form.querySelector("[name=name]")||{}).value||"";
+      const ph=(form.querySelector("[name=phone]")||{}).value||"";
+      const msg=(form.querySelector("[name=message]")||{}).value||"";
+      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
+      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
+      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
+      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
+    });
+  });
+})();
+</script>
+</body>
+</html>

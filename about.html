@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact O’Fallon Services LLC</title>
+<title>About Mike O’Fallon — O’Fallon Services LLC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="site.css" />
@@ -18,33 +18,29 @@
     <li><a class="n " href="engines.html">Engines</a></li>
     <li><a class="n " href="welding.html">Welding</a></li>
     <li><a class="n " href="cdl.html">Class A</a></li>
-    <li><a class="n " href="about.html">About</a></li>
-    <li><a class="n on" href="contact.html">Contact</a></li>
+    <li><a class="n on" href="about.html">About</a></li>
+    <li><a class="n " href="contact.html">Contact</a></li>
   </ul>
 </div></nav>
 <section class="pagehero">
   <img src="photos/hero.svg" alt="O’Fallon shop" />
   <div class="copy wrap">
-    <p class="kicker">Contact</p>
-    <h1>Call, text, or send the job.</h1>
+    <p class="kicker">The shop</p>
+    <h1>Mike O’Fallon. Direct line.</h1>
   </div>
 </section>
 <section class="sec"><div class="wrap split">
+  <img class="shot" src="photos/carb.svg" alt="Hands on a carburetor rebuild" />
   <div>
-    <p class="body">402-676-8241 is the shop. Use the form if you would rather write. Say what broke, where it sits, and when you need it.</p>
-    <div class="btns">
-      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
-      <a class="btn btn-kelly" href="sms:4026768241">Text Mike</a>
-      <a class="btn btn-line" style="color:#06210C;border-color:var(--gold)" href="mailto:ofallon.services.llc@gmail.com">Email the shop</a>
+    <p class="body">You do not get a dispatcher chain. You get Mike. Call or text with what broke, where it sits, and when you need it back. If the job is ours, it gets a time. If it is not, you get that answer instead of a maybe.</p>
+    <p class="body">Hours are Monday through Saturday by appointment. Sunday is for breakdown texts only. Omaha metro and surrounding Nebraska. A street address is given when the job is booked.</p>
+    <div class="facts" style="margin-top:28px">
+      <article><h3>Hours</h3><p>Mon–Sat by appointment. Sunday: breakdown texts only.</p></article>
+      <article><h3>Area</h3><p>Omaha metro and surrounding Nebraska.</p></article>
+      <article><h3>Line</h3><p>402-676-8241</p></article>
     </div>
+    <div class="btns"><a class="btn btn-kelly" href="contact.html">Request work</a></div>
   </div>
-  <form class="form quote" data-service="General inquiry">
-    <div><label>Name</label><input name="name" required></div>
-    <div><label>Phone</label><input name="phone" required></div>
-    <div class="full"><label>What do you need</label><textarea name="message" required></textarea></div>
-    <div class="full"><button class="btn btn-kelly" type="submit">Send to the shop</button></div>
-    <div class="ok">Opening a text and email to the shop.</div>
-  </form>
 </div></section>
 <div class="strip" id="call"><div class="wrap">
   <h2>The number is the shop.</h2>
@@ -63,20 +59,6 @@
   const burger=document.getElementById("burger");
   const list=document.getElementById("navlist");
   if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
-  const phone="4026768241", email="ofallon.services.llc@gmail.com";
-  document.querySelectorAll("form.quote").forEach(function(form){
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const svc=form.getAttribute("data-service");
-      const name=(form.querySelector("[name=name]")||{}).value||"";
-      const ph=(form.querySelector("[name=phone]")||{}).value||"";
-      const msg=(form.querySelector("[name=message]")||{}).value||"";
-      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
-      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
-      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
-      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
-    });
-  });
 })();
 </script>
 </body>
