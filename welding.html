@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Light welding repair &amp; fabrication — O’Fallon Services LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<div class="top"><div class="wrap"><span>DRAFT FOR OWNER REVIEW · Omaha metro</span><a href="tel:4026768241">402-676-8241 · call or text</a></div></div>
+<nav><div class="wrap">
+  <a class="brand" href="index.html"><img src="photos/mark.svg" alt="O’Fallon shamrock mark" /><span><b>O’Fallon Services</b><small>LLC · Mike O’Fallon</small></span></a>
+  <button class="burger" type="button" id="burger">Menu</button>
+  <ul id="navlist">
+    <li><a class="n " href="index.html">Home</a></li>
+    <li><a class="n " href="engines.html">Engines</a></li>
+    <li><a class="n on" href="welding.html">Welding</a></li>
+    <li><a class="n " href="cdl.html">Class A</a></li>
+    <li><a class="n " href="about.html">About</a></li>
+    <li><a class="n " href="contact.html">Contact</a></li>
+  </ul>
+</div></nav>
+<section class="pagehero">
+  <img src="photos/weld.svg" alt="Light welding repair on steel" />
+  <div class="copy wrap">
+    <p class="kicker">Welding</p>
+    <h1>Light welding repair &amp; fabrication</h1>
+    <div class="btns">
+      <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+      <a class="btn btn-kelly" href="#request">Request this job</a>
+    </div>
+  </div>
+</section>
+<section class="sec" id="request"><div class="wrap split">
+  <img class="shot" src="photos/weld.svg" alt="Weld on a bracket and frame" />
+  <div>
+    <p class="body">Cracked brackets. Bent implement frames. A gate that no longer hangs. Trailer tabs that tore out. This is light-duty work — honest about what belongs on this bench and what needs a heavier shop.</p>
+    <p class="body">Send a photo. Say what it is, what failed, and whether it has to move this week.</p>
+    <ul class="list">
+      <li>Brackets, tabs, gates, light frames</li>
+      <li>Repair first, fabricate when the part is gone</li>
+      <li>Scope confirmed before the torch comes out</li>
+    </ul>
+    <form class="form quote" data-service="Light welding repair & fabrication">
+      <div><label>Name</label><input name="name" required></div>
+      <div><label>Phone</label><input name="phone" required></div>
+      <div class="full"><label>What broke and where it sits</label><textarea name="message" required></textarea></div>
+      <div class="full"><button class="btn btn-kelly" type="submit">Send this weld job</button></div>
+      <div class="ok">Opening a text and email to the shop.</div>
+    </form>
+  </div>
+</div></section>
+<div class="strip" id="call"><div class="wrap">
+  <h2>The number is the shop.</h2>
+  <div class="btns">
+    <a class="btn btn-gold" href="tel:4026768241">Call 402-676-8241</a>
+    <a class="btn btn-line" href="sms:4026768241" style="color:#06210C;border-color:#06210C">Text Mike</a>
+  </div>
+</div></div>
+<footer><div class="wrap">
+  <div>O’Fallon Services LLC · Mike O’Fallon</div>
+  <div><a href="tel:4026768241">402-676-8241</a> · <a href="mailto:ofallon.services.llc@gmail.com">ofallon.services.llc@gmail.com</a></div>
+</div></footer>
+<div class="float"><a class="btn btn-gold" href="tel:4026768241">Call now</a></div>
+<script>
+(function(){
+  const burger=document.getElementById("burger");
+  const list=document.getElementById("navlist");
+  if(burger&&list) burger.addEventListener("click",function(){list.classList.toggle("open");});
+  const phone="4026768241", email="ofallon.services.llc@gmail.com";
+  document.querySelectorAll("form.quote").forEach(function(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const svc=form.getAttribute("data-service");
+      const name=(form.querySelector("[name=name]")||{}).value||"";
+      const ph=(form.querySelector("[name=phone]")||{}).value||"";
+      const msg=(form.querySelector("[name=message]")||{}).value||"";
+      const body=["SERVICE REQUEST — O'Fallon Services LLC","Service: "+svc,"Name: "+name,"Phone: "+ph,"","Details:",msg].join("\n");
+      const ok=form.querySelector(".ok"); if(ok) ok.style.display="block";
+      window.location.href="mailto:"+email+"?subject="+encodeURIComponent("Service request — "+svc)+"&body="+encodeURIComponent(body);
+      setTimeout(function(){ window.location.href="sms:"+phone+"?body="+encodeURIComponent(body); },400);
+    });
+  });
+})();
+</script>
+</body>
+</html>
